@@ -103,7 +103,6 @@ jQuery(document).ready(function ($) {
             }
         }
     })
-
 });
 $(function () {
     var owl = $('.owl-carousel1');
@@ -122,12 +121,10 @@ $(function () {
         onInitialized: counter, //When the plugin has initialized.
         onTranslated: counter //When the translation of the stage has finished.
     });
-
     function counter(event) {
         var element = event.target; // DOM element, in this example .owl-carousel
         var items = event.item.count; // Number of items
         var item = event.item.index + -3; // Position of the current item
-
         // it loop is true then reset counter from 1
         if (item > items) {
             item = item - items
@@ -141,7 +138,6 @@ $(function () {
 // COUNTER
 const counters = document.querySelectorAll('.count');
 const speed = 200;
-
 counters.forEach(counter => {
     const animate = () => {
         const value = +counter.getAttribute('id');
@@ -154,20 +150,16 @@ counters.forEach(counter => {
         } else {
             counter.innerText = value;
         }
-
     }
-
     animate();
 });
 // COUNTER
 // TABS
 const tabs = document.querySelectorAll('[data-role="tab"]'),
     tabContents = document.querySelectorAll(".tab-panel");
-
 tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
         const target = document.querySelector(tab.dataset.target);
-
         tabContents.forEach((tc) => {
             tc.classList.remove("is-active");
         });
